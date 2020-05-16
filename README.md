@@ -38,6 +38,9 @@ This is a project for team 162,we are creating a solution that will give local f
 
 	# Apply migrations
 	python manage.py migrate
+	
+	# Create super user
+	python manage.py createsuperuser
 
 	# Load initial default data (if present) in the fixtures directory
 	python manage.py loaddata fixture
