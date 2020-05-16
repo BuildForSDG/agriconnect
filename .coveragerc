@@ -8,5 +8,6 @@ omit =
 	*tests/*,
 	*urls.py,
 	*wsgi.py,
+	*asgi.py,
 	*env/*,
 	manage.py,

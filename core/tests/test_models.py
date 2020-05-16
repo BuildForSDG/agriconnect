@@ -19,6 +19,7 @@ class TestCoreModels(object):
 		Tests for User model
 		"""
 
-		user = mixer.blend('core.User', username = 'jane_doo', first_name = 'Jane', last_name = 'Doo')
+		user = mixer.blend(
+			'core.User', username = 'jane_doo', first_name = 'Jane', last_name = 'Doo', is_superuser = True)
 		assert user is not None, 'Should create a User instance'
 		assert str(user) == 'jane_doo <Jane Doo>', 'Should be a jane_doo named object'
