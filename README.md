@@ -12,7 +12,7 @@ This is a project for team 162,we are creating a solution that will give local f
  Python 3
  --------
  
-    Install Python 3.0 from [Python download page](https://www.python.org/downloads/)
+ Install Python 3.0 from [Python download page](https://www.python.org/downloads/)
     
  Install Dependencies
  --------------------
