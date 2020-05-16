@@ -73,6 +73,7 @@ class Status(GenericBaseModel):
 	class Meta(object):
 		ordering = ('name',)
 		unique_together = ('name',)
+		verbose_name_plural = 'statuses'
 
 	@classmethod
 	def default_status(cls):
@@ -131,6 +132,7 @@ class Category(GenericBaseModel):
 	class Meta(object):
 		ordering = ('name',)
 		unique_together = ('name',)
+		verbose_name_plural = 'categories'
 
 	@classmethod
 	def default_category(cls):
