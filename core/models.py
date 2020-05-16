@@ -31,7 +31,7 @@ class User(BaseModel, AbstractUser):
 
 	def __str__(self):
 		if self.first_name or self.last_name:
-			names = ' <%s %s>' % (self.first_name, self.last_name)
+			names = ' <%s %s>' % (self.first_name or '', self.last_name or '')
 		else:
 			names = ''
 		return '%s%s' % (self.username, names)
