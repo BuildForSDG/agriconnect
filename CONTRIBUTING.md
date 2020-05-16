@@ -5,6 +5,12 @@ email, or any other method with the owners of this repository before making a ch
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
+## Before Starting
+
+If this project sounds interesting to you and you'd like to contribute, thank you! First, you can send a mail to
+ [buildforsdg@andela.com](mailto:buildforsdg@andela.com) to indicate your interest, why you'd like to support and what forms of support you
+  can bring to the table.
+
 ## Pull Request Process
 
 1. Ensure any install or build dependencies are fully documented in `requirements.txt`.
