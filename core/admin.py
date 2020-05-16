@@ -21,6 +21,14 @@ class UserCoreAdmin(UserAdmin):
 		}),
 		(_('Important dates'), {'fields': ('last_login', 'date_joined')}),
 	)
+	add_fieldsets = (
+		(None, {
+			'classes': ('wide',),
+			'fields': ('username', 'account_type', 'status', 'password1', 'password2'),
+		}),
+	)
+
+	add_form = CustomUserCreationForm
 
 	list_filter = ('date_created', 'gender', 'account_type', 'status')
 	date_hierarchy = 'date_created'
