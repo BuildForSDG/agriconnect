@@ -15,4 +15,3 @@ htmlcov
 *.coverage
 *.vscode
 *.pytest_cache/*
-manage.py
