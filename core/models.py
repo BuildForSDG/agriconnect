@@ -33,6 +33,10 @@ class User(BaseModel, AbstractUser):
 		Status, on_delete = models.PROTECT, null = True, blank = True, default = Status.default_status)
 
 	def __str__(self):
+		"""
+		Returns the username, first name and last name combinations.
+		@return: Name repr for the user.
+		"""
 		if self.first_name or self.last_name:
 			names = ' <%s %s>' % (self.first_name or '', self.last_name or '')
 		else:
@@ -40,9 +44,17 @@ class User(BaseModel, AbstractUser):
 		return '%s%s' % (self.username, names)
 
 	def full_name(self):
+		"""
+		Returns the full name of the user.
+		@return: Full Name of the user.
+		"""
 		return '%s %s %s' % (self.first_name or '', self.last_name or '', self.other_name or '')
 
 	def clean(self):
+		"""
+		Runs cleaning logic for inputs before saving the entry.
+		@return: Nothing
+		"""
 		errors = dict()
 		if not self.is_superuser:
 			if not self.account_type_id:
@@ -55,6 +67,10 @@ class User(BaseModel, AbstractUser):
 		super(User, self).clean()
 
 	def save(self, *args, **kwargs):
+		"""
+		Runs before save logic for inputs before saving the entry.
+		@return: Nothing
+		"""
 		errors = dict()
 		if not self.is_superuser:
 			if not self.account_type_id:
