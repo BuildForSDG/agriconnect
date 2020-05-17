@@ -14,11 +14,14 @@ If this project sounds interesting to you and you'd like to contribute, thank yo
 ## Pull Request Process
 
 1.  Ensure any install or build dependencies are fully documented in `requirements.txt`.
+
 2.  Update the README.md with details of changes to the interface, this includes new environment 
    variables, exposed ports, useful file locations, etc.
 
 3.  Ensure that your changes pass all the tests and you have fully tested your new changes.
+
 4.  Your PR should be targeting the `dev` branch.
+
 5.  Your pull request will be reviewed by at least 2 developers before being merged.
 
 ## Code of Conduct
@@ -49,7 +52,9 @@ Examples of unacceptable behavior by participants include:
 advances
 
 *   Trolling, insulting/derogatory comments, and personal or political attacks
+
 *   Public or private harassment
+
 *   Publishing others' private information, such as a physical or electronic
   address, without explicit permission
 
