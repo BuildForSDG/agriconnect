@@ -15,6 +15,9 @@ class BaseModel(models.Model):
 	date_created = models.DateTimeField(auto_now_add = True)
 
 	class Meta(object):
+		"""
+		Meta data definition for the abstract model.
+		"""
 		abstract = True
 
 
@@ -27,6 +30,9 @@ class GenericBaseModel(BaseModel):
 	description = models.TextField(max_length = 300, blank = True, null = True)
 
 	class Meta(object):
+		"""
+		Meta data definition for the abstract model.
+		"""
 		abstract = True
 
 
@@ -43,6 +49,9 @@ class Status(GenericBaseModel):
 		return '%s' % self.name
 
 	class Meta(object):
+		"""
+		Meta data definition for the model.
+		"""
 		ordering = ('name',)
 		unique_together = ('name',)
 		verbose_name_plural = 'statuses'
@@ -90,6 +99,9 @@ class AccountType(GenericBaseModel):
 		return '%s' % self.name
 
 	class Meta(object):
+		"""
+		Meta data definition for the model.
+		"""
 		ordering = ('name',)
 		unique_together = ('name',)
 
@@ -108,6 +120,9 @@ class Category(GenericBaseModel):
 		return '%s' % self.name
 
 	class Meta(object):
+		"""
+		Meta data definition for the model.
+		"""
 		ordering = ('name',)
 		unique_together = ('name',)
 		verbose_name_plural = 'categories'
