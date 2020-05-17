@@ -3,6 +3,7 @@
 # AGRICONNECT
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d796a571f46d461a92d142b022cc63a4)](https://app.codacy.com/gh/BuildForSDG/Team-162--Improve-agriculture-?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/Team-162--Improve-agriculture-&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/c40dd06465bb4abfb420d8748fba67e3)](https://www.codacy.com/gh/BuildForSDG/Team-162--Improve-agriculture-?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/Team-162--Improve-agriculture-&utm_campaign=Badge_Coverage)
 
 ## About
 
