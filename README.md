@@ -64,8 +64,11 @@ The tests are ran with the help of py.test;
 The following are the authors of this awesome solution;
  
 1.  [Virginiah Periah](https://github.com/virginiah894)
+
 2.  [Harison Mwangi](https://github.com/Harison-Mwangi)
+
 3.  [Sherline Kinyanjui](https://github.com/sherlinekinyanjui)
+
 4.  [Cyrus Mushier](https://github.com/cymushier) | 
  [![LinkedIn](https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-linkedin-s.png)](https://www.linkedin.com/in/mushierc/) | 
  [![Twitter](https://cdnjs.cloudflare.com/ajax/libs/webicons/2.0.0/webicons/webicon-twitter-s.png)](https://twitter.com/cymushier)
@@ -79,4 +82,3 @@ To contribute to the project, kindly go through the `CONTRIBUTING.md` guidelines
 1.  All development work should be from a branch targeting the `dev` branch as the main development target.
 2.  All test across the project MUST be running for the work to be accepted.
 3.  Maintain tests coverage of at least 85% with your feature contributions.
-
