@@ -8,7 +8,7 @@ jobs:
     name: codacy-coverage-reporter
     steps:
       - uses: actions/checkout@master
-      - name: Run codacy-coverage-reporter
+      - name: Run codacy-coverage-reporter on master
         uses: codacy/codacy-coverage-reporter-action@master
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
