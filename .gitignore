@@ -13,5 +13,6 @@ htmlcov
 *.sqlite3
 .coverage
 *.coverage
+coverage.xml
 *.vscode
 *.pytest_cache/*
