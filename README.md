@@ -1,7 +1,8 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d796a571f46d461a92d142b022cc63a4)](https://app.codacy.com/gh/BuildForSDG/Team-162--Improve-agriculture-?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/Team-162--Improve-agriculture-&utm_campaign=Badge_Grade_Dashboard)
 [![N|Solid](http://www.undp.org/content/dam/undp/sdg/sdg-header-en.png)](https://docs.google.com/presentation/d/1YioOEE9Mke9xQr1m_pV0T9XPZu1xbXiqnFFs_XCfD9o/edit#slide=id.g747becbb5f_5_36)
 
 # AGRICONNECT
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d796a571f46d461a92d142b022cc63a4)](https://app.codacy.com/gh/BuildForSDG/Team-162--Improve-agriculture-?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDG/Team-162--Improve-agriculture-&utm_campaign=Badge_Grade_Dashboard)
 
 ## About
 
