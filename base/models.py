@@ -82,12 +82,11 @@ class Status(GenericBaseModel):
 		@return: The active state, if it exists, or None if it doesn't exist.
 		@rtype: uuid | str | None
 		"""
-		# noinspection PyBroadException
 		try:
 			state = cls.objects.get(name = 'Active')
 			return state.id
-		except Exception:
-			pass
+		except Exception as x:
+			print('default_status Exception: %s' % x)
 		return None
 
 	@classmethod
@@ -97,12 +96,11 @@ class Status(GenericBaseModel):
 		@return: The disabled state, if it exists, or None if it doesn't exist.
 		@rtype: uuid | str | None
 		"""
-		# noinspection PyBroadException
 		try:
 			state = cls.objects.get(name = 'Disabled')
 			return state
-		except Exception:
-			pass
+		except Exception as x:
+			print('disabled_status Exception: %s' % x)
 		return None
 
 
@@ -141,10 +139,9 @@ class Category(GenericBaseModel):
 		@return: The Default category, if it exists, or None if it doesn't exist.
 		@rtype: uuid | str | None
 		"""
-		# noinspection PyBroadException
 		try:
 			category = cls.objects.get(name = 'Default')
 			return category.id
-		except Exception:
-			pass
+		except Exception as x:
+			print('default_category Exception: %s' % x)
 		return None

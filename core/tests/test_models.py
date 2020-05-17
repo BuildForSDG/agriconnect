@@ -2,6 +2,7 @@
 """
 Tests for core module's models.
 """
+from unittest import TestCase
 
 import pytest
 from mixer.backend.django import mixer
@@ -9,7 +10,7 @@ from mixer.backend.django import mixer
 pytestmark = pytest.mark.django_db
 
 
-class TestCoreModels(object):
+class TestCoreModels(TestCase):
 	"""
 	Class for testing core models
 	"""
@@ -18,8 +19,7 @@ class TestCoreModels(object):
 		"""
 		Tests for User model
 		"""
-
 		user = mixer.blend(
 			'core.User', username = 'jane_doo', first_name = 'Jane', last_name = 'Doo', is_superuser = True)
-		assert user is not None, 'Should create a User instance'
-		assert str(user) == 'jane_doo <Jane Doo>', 'Should be a jane_doo named object'
+		self.assertIsNotNone(user, 'Should create a User instance')
+		self.assertEqual(str(user), 'jane_doo <Jane Doo>', 'Should be a jane_doo <Jane Doo> named object')

@@ -11,7 +11,9 @@ from core.validators import PhoneNumberValidator
 
 
 class User(BaseModel, AbstractUser):
-	"""The user customized from Django's default user."""
+	"""
+	The user customized from Django's default user.
+	"""
 	phone_number_validator = PhoneNumberValidator()
 
 	GENDER_CHOICES = [
