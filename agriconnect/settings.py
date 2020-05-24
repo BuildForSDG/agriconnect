@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base',
     'core',
-    'api'
+    'api',
+    'bootstrap4'
 ]
 
 MIDDLEWARE = [
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -121,6 +122,11 @@ STATIC_URL = '/static/'
 
 # Logging - Custom
 LOGS_ROOT = '/var/www/logs/agriconnect/'
+
+
+
+
+
 
 LOGGING = {
     'version': 1,
