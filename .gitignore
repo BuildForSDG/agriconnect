@@ -16,3 +16,4 @@ htmlcov
 coverage.xml
 *.vscode
 *.pytest_cache/*
+.virtual/
