@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from base.models import BaseModel, AccountType, Status
+from base.models import BaseModel, AccountType, Status, Category
 from core.validators import PhoneNumberValidator
 
 
@@ -81,3 +81,31 @@ class User(BaseModel, AbstractUser):
 		if errors:
 			raise ValidationError(errors)
 		super(User, self).save(*args, **kwargs)
+
+
+class Post(BaseModel):
+	"""
+	The posts model for storing the posts by users.
+	"""
+	title = models.CharField(_('title'), max_length = 100, null = True, blank = True)
+	content = models.TextField(max_length = 5000)
+	excerpt = models.TextField(max_length = 300, null = True, blank = True)
+	user = models.ForeignKey(User, on_delete = models.PROTECT)
+	slug = models.CharField(max_length = 255, null = True, blank = True)
+	featured = models.BooleanField(default = False)
+	category = models.ForeignKey(Category, default = Category.default_category, on_delete = models.PROTECT)
+	parent = models.ForeignKey('self', on_delete = models.SET_NULL, null = True, blank = True)
+	priority = models.DecimalField(max_digits = 25, decimal_places = 4, default = 0.0000)
+	tags = models.TextField(max_length = 355, null = True, blank = True)
+	comments_count = models.IntegerField(default = 0)
+	reactions_count = models.IntegerField(default = 0)
+	password = models.CharField(max_length = 200, null = True, blank = True)
+	status = models.ForeignKey(Status, default = Status.default_status, on_delete = models.PROTECT)
+
+	def __str__(self):
+		"""
+		The string repr of the object.
+		@return: String representation of the instance.
+		@rtype: str
+		"""
+		return '%s-%s(%s)' % (self.title, self.category, self.status)
