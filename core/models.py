@@ -103,4 +103,9 @@ class Post(BaseModel):
 	status = models.ForeignKey(Status, default = Status.default_status, on_delete = models.PROTECT)
 
 	def __str__(self):
+		"""
+		The string repr of the object.
+		@return: String representation of the instance.
+		@rtype: str
+		"""
 		return '%s-%s(%s)' % (self.title, self.category, self.status)
