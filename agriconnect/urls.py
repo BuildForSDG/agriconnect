@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.urls import re_path
+from django.contrib.auth import views
 
 
 admin.site.site_header = 'Agri Connect'
@@ -25,5 +25,6 @@ admin.site.site_title = 'Agri Connect'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('base.urls')),
-    
+    path('accounts/', include('registration.backends.simple.urls')),
+   
 ]
