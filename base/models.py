@@ -148,3 +148,12 @@ class Category(GenericBaseModel):
 		except Exception:
 			pass
 		return None
+
+class Reaction(GenericBaseModel):
+    """
+	A user's reaction
+	"""
+	status = models.ForeignKey(Status, on_delete = models.PROTECT)
+
+	def __str__(self):
+		return '%s' % self.name
