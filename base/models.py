@@ -15,7 +15,7 @@ class BaseModel(models.Model):
 	date_created = models.DateTimeField(auto_now_add = True)
 
 	class Meta(object):
-		abstract = True
+    		abstract = True
 
 	def get_foreign_keys(self):
 		"""
@@ -150,7 +150,7 @@ class Category(GenericBaseModel):
 		return None
 
 class Reaction(GenericBaseModel):
-    """
+	"""
 	A user's reaction
 	"""
 	status = models.ForeignKey(Status, on_delete = models.PROTECT)
