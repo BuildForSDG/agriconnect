@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from base.models import Status, AccountType, Category
+from base.models import Status, AccountType, Category, Reaction
 
 
 @admin.register(Status)
@@ -21,6 +21,13 @@ class AccountTypeAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+	list_filter = ('date_created',)
+	date_hierarchy = 'date_created'
+	list_display = ('name', 'status', 'date_modified', 'date_created')
+	search_fields = ('name', 'status__name')
+
+@admin.register(Reaction)
+class ReactionAdmin(admin.ModelAdmin):
 	list_filter = ('date_created',)
 	date_hierarchy = 'date_created'
 	list_display = ('name', 'status', 'date_modified', 'date_created')
