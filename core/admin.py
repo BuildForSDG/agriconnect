@@ -6,7 +6,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
 from core.forms import CustomUserCreationForm
-from core.models import User, Post
+from core.models import User, Post, PostReaction
 
 
 @admin.register(User)
@@ -52,3 +52,14 @@ class PostAdmin(admin.ModelAdmin):
 	search_fields = (
 		'title', 'content', 'user__first_name', 'user__last_name', 'user__other_name', 'category__name',
 		'priority', 'comments_count', 'reactions_count', 'status__name')
+
+
+@admin.register(PostReaction)
+class PostReactionAdmin(admin.ModelAdmin):
+	"""
+	Admin model for PostReaction entity.
+	"""
+	list_filter = ('date_created', 'date_modified')
+	date_hierarchy = 'date_created'
+	list_display = ('user', 'date_modified', 'date_created')
+	search_fields = ('post', 'user__first_name', 'user__last_name', 'user__other_name')
