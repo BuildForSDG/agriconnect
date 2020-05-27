@@ -3,28 +3,18 @@ The forms for core module
 """
 from django import forms
 from django.contrib.auth import (
-    authenticate, get_user_model, password_validation,
+    password_validation,
 )
 from django.contrib.auth.forms import UsernameField
-from django.contrib.auth.hashers import (
-    UNUSABLE_PASSWORD_PREFIX, identify_hasher,
-)
-from django.contrib.auth.models import User
-from django.contrib.auth.tokens import default_token_generator
-from django.contrib.sites.shortcuts import get_current_site
-from django.core.mail import EmailMultiAlternatives
-from django.template import loader
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode
-from django.utils.text import capfirst
-from django.utils.translation import gettext, gettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
-from base.models import AccountType, Status
 from core.models import User
 
 
 class CustomUserCreationForm(forms.ModelForm):
-    """We do some custom stuff to ensure that the creation form is valid in this context"""
+    """
+    We do some custom stuff to ensure that the creation form is valid in this context.
+    """
 
     error_messages = {
         'password_mismatch': _('The two password fields didn’t match.'),
@@ -41,18 +31,6 @@ class CustomUserCreationForm(forms.ModelForm):
         strip = False,
         help_text = _("Enter the same password as before, for verification."),
     )
-    # account_type = forms.ModelChoiceField(
-    #     label = _("Account Type"),
-    #     queryset = AccountType.objects.filter(),
-    #     # widget = forms.Select(attrs = {'autocomplete': 'new-password'}),
-    #     help_text = _("Select the account type for the user."),
-    # )
-    # status = forms.ModelChoiceField(
-    #     label = _("Status"),
-    #     queryset = Status.objects.filter(),
-    #     widget = forms.Select(attrs = {'autocomplete': 'new-password'}),
-    #     help_text = _("Select the status for the user."),
-    # )
 
     class Meta:
         model = User
@@ -60,6 +38,11 @@ class CustomUserCreationForm(forms.ModelForm):
         field_classes = {'username': UsernameField}
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form's state (overriding).
+        @param args:
+        @param kwargs:
+        """
         super().__init__(*args, **kwargs)
         if self._meta.model.USERNAME_FIELD in self.fields:
             self.fields[self._meta.model.USERNAME_FIELD].widget.attrs['autofocus'] = True

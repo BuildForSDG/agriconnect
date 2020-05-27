@@ -15,6 +15,7 @@ class BaseModel(models.Model):
 	date_created = models.DateTimeField(auto_now_add = True)
 
 	class Meta(object):
+<<<<<<< HEAD
     		abstract = True
 
 	def get_foreign_keys(self):
@@ -33,21 +34,12 @@ class BaseModel(models.Model):
 		return foreign_keys
 
 	def get_passable_fields(self):
+=======
+>>>>>>> 94b92573550f4c931d3ff1d3cd15de0778334e89
 		"""
-		Retrieves all the fields of the model. For foreign keys, support for *_id representation
-		to allow easy passing client side.
-		@return: The keys found.
-		@rtype: list
+		Meta data definition for the abstract model.
 		"""
-		keys = []
-		try:
-			for field in self._meta.fields:
-				keys.append(field.name)
-				if isinstance(self._meta.get_field(field.name), models.ForeignKey):
-					keys.append(str('%s_id' % field.name))
-		except Exception as e:
-			print('get_passable_fields Exception: %s' % e)
-		return keys
+		abstract = True
 
 
 class GenericBaseModel(BaseModel):
@@ -59,6 +51,9 @@ class GenericBaseModel(BaseModel):
 	description = models.TextField(max_length = 300, blank = True, null = True)
 
 	class Meta(object):
+		"""
+		Meta data definition for the abstract model.
+		"""
 		abstract = True
 
 
@@ -68,9 +63,16 @@ class Status(GenericBaseModel):
 	"""
 
 	def __str__(self):
+		"""
+		Returns the name for the Status.
+		@return: Name of Status
+		"""
 		return '%s' % self.name
 
 	class Meta(object):
+		"""
+		Meta data definition for the model.
+		"""
 		ordering = ('name',)
 		unique_together = ('name',)
 		verbose_name_plural = 'statuses'
@@ -82,12 +84,11 @@ class Status(GenericBaseModel):
 		@return: The active state, if it exists, or None if it doesn't exist.
 		@rtype: uuid | str | None
 		"""
-		# noinspection PyBroadException
 		try:
 			state = cls.objects.get(name = 'Active')
 			return state.id
-		except Exception:
-			pass
+		except Exception as x:
+			print('default_status Exception: %s' % x)
 		return None
 
 	@classmethod
@@ -97,12 +98,11 @@ class Status(GenericBaseModel):
 		@return: The disabled state, if it exists, or None if it doesn't exist.
 		@rtype: uuid | str | None
 		"""
-		# noinspection PyBroadException
 		try:
 			state = cls.objects.get(name = 'Disabled')
 			return state
-		except Exception:
-			pass
+		except Exception as x:
+			print('disabled_status Exception: %s' % x)
 		return None
 
 
@@ -113,9 +113,16 @@ class AccountType(GenericBaseModel):
 	status = models.ForeignKey(Status, on_delete = models.PROTECT)
 
 	def __str__(self):
+		"""
+		Returns the name for the AccountType.
+		@return: Name of AccountType
+		"""
 		return '%s' % self.name
 
 	class Meta(object):
+		"""
+		Meta data definition for the model.
+		"""
 		ordering = ('name',)
 		unique_together = ('name',)
 
@@ -127,9 +134,16 @@ class Category(GenericBaseModel):
 	status = models.ForeignKey(Status, on_delete = models.PROTECT)
 
 	def __str__(self):
+		"""
+		Returns the name for the category.
+		@return: Name of category
+		"""
 		return '%s' % self.name
 
 	class Meta(object):
+		"""
+		Meta data definition for the model.
+		"""
 		ordering = ('name',)
 		unique_together = ('name',)
 		verbose_name_plural = 'categories'
@@ -141,12 +155,11 @@ class Category(GenericBaseModel):
 		@return: The Default category, if it exists, or None if it doesn't exist.
 		@rtype: uuid | str | None
 		"""
-		# noinspection PyBroadException
 		try:
 			category = cls.objects.get(name = 'Default')
 			return category.id
-		except Exception:
-			pass
+		except Exception as x:
+			print('default_category Exception: %s' % x)
 		return None
 
 class Reaction(GenericBaseModel):

@@ -6,6 +6,9 @@ from .settings import *
 
 DEBUG = True
 
+# Overriding logging to avoid file issues
+LOGGING = {}
+
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 

@@ -1,4 +1,4 @@
-name: Greetings
+name: Greetings Contributor
 
 on: [pull_request, issues]
 
@@ -10,4 +10,5 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: 'Thank you for raising your first issue. You can continue to provide more detailed issue description and/or add other issues and we''ll be able to act as soon as possible.'
-        pr-message: 'Thank you for creating your first PR. We value your contribution to this repo. We''ll get back to you when we review and probably merge your PR.'
+        pr-message: 'Thank you for creating your first PR. We value your contribution to this repo. Looking forward
+        to more collaboration.'

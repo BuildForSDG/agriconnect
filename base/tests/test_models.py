@@ -2,6 +2,7 @@
 """
 This file contains the tests for models in this module.
 """
+from unittest import TestCase
 
 import pytest
 from mixer.backend.django import mixer
@@ -9,7 +10,7 @@ from mixer.backend.django import mixer
 pytestmark = pytest.mark.django_db
 
 
-class TestBaseModels(object):
+class TestBaseModels(TestCase):
 	"""
 	Class for testing base models
 	"""
@@ -20,8 +21,8 @@ class TestBaseModels(object):
 		"""
 
 		state = mixer.blend('base.Status', name = 'Active')
-		assert state is not None, 'Should create a State instance'
-		assert str(state) == 'Active', 'Should be a Active named object'
+		self.assertIsNotNone(state, 'Should create a State instance')
+		self.assertEqual(str(state), 'Active', 'Should be a Active named object')
 
 	def test_account_type(self):
 		"""
@@ -29,8 +30,8 @@ class TestBaseModels(object):
 		"""
 
 		account_type = mixer.blend('base.AccountType', name = 'Farmer')
-		assert account_type is not None, 'Should create a AccountType instance'
-		assert str(account_type) == 'Farmer', 'Should be a Farmer named object'
+		self.assertIsNotNone(account_type, 'Should create a AccountType instance')
+		self.assertEqual(str(account_type), 'Farmer', 'Should be a Farmer named object')
 
 	def test_category(self):
 		"""
@@ -38,5 +39,5 @@ class TestBaseModels(object):
 		"""
 
 		category = mixer.blend('base.Category', name = 'Default')
-		assert category is not None, 'Should create a Category instance'
-		assert str(category) == 'Default', 'Should be a Default named object'
+		self.assertIsNotNone(category, 'Should create a Category instance')
+		self.assertEqual(str(category), 'Default', 'Should be a Default named object')
