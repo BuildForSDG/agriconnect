@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from base.models import BaseModel, AccountType, Status, Category
+from base.models import BaseModel, AccountType, Status, Category, Reaction
 from core.validators import PhoneNumberValidator
 
 
@@ -109,3 +109,20 @@ class Post(BaseModel):
 		@rtype: str
 		"""
 		return '%s-%s(%s)' % (self.title, self.category, self.status)
+
+class PostReaction(BaseModel):
+	"""
+	The post reaction model for storing users reactions to posts
+	"""
+	post = models.ForeignKey(Post, on_delete=models.PROTECT)
+	user = models.ForeignKey(User, on_delete=models.PROTECT)
+	reaction = models.ForeignKey(Reaction, on_delete=models.PROTECT)
+	status = models.ForeignKey(Status, on_delete=models.PROTECT)
+
+	def __str__(self):
+		"""
+		The string repr of the object.
+		@return: String representation of the instance.
+		@rtype: str
+		"""
+		return '%s-%s' % (self.post, self.reaction)
