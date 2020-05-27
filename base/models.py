@@ -15,7 +15,6 @@ class BaseModel(models.Model):
 	date_created = models.DateTimeField(auto_now_add = True)
 
 	class Meta(object):
-<<<<<<< HEAD
     		abstract = True
 
 	def get_foreign_keys(self):
@@ -34,8 +33,6 @@ class BaseModel(models.Model):
 		return foreign_keys
 
 	def get_passable_fields(self):
-=======
->>>>>>> 94b92573550f4c931d3ff1d3cd15de0778334e89
 		"""
 		Meta data definition for the abstract model.
 		"""
