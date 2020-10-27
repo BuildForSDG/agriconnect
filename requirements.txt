@@ -3,7 +3,7 @@ django-bootstrap4
 celery==4.3.0
 coverage==4.5.4
 crypto==1.4.1
-cryptography==2.8
+cryptography==3.2
 decorator==4.4.1
 Django==3.0.6
 django-celery-results==1.1.2
