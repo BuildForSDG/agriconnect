@@ -1,6 +1,6 @@
 autopep8==1.4.4
 django-bootstrap4
-celery==4.3.0
+celery==5.2.2
 coverage==4.5.4
 crypto==1.4.1
 cryptography==2.8
