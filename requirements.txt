@@ -6,7 +6,7 @@ crypto==1.4.1
 cryptography==2.8
 decorator==4.4.1
 Django==3.0.6
-django-celery-results==1.1.2
+django-celery-results==2.4.0
 django-simple-gravatar==1.0.1
 djangorestframework==3.10.3
 djangorestframework-jwt==1.11.0
